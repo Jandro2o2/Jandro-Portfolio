@@ -1,0 +1,559 @@
+html {
+    scroll-behavior: smooth;
+  }
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  /* Botón flotante */
+.boton-flotante {
+    position: fixed;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #ffffff; /* Color del fondo */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Hace el botón redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000; /* Asegura que esté siempre visible */
+  }
+  
+  .boton-flotante:hover {
+    background-color: #00b3b3; /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .boton-flotante i {
+    font-size: 20px; /* Tamaño del icono */
+  }
+  
+  /* Tipografía global */
+  body {
+    font-family: "Century Gothic", Arial, sans-serif;
+    color: #ffffff; /* Color de texto predeterminado */
+    background-color: #008080; /* Fondo del sitio */
+    margin: 0;
+  }
+  
+ /* Barra Superior */
+.header {
+    padding: 10px 20px; /* Espaciado más flexible */
+    margin: 0px 4em 0 4em;
+    position: relative;
+    z-index: 10;
+    background-color: #008080; /* Color de fondo de la barra */
+  }
+  
+  .header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en dispositivos pequeños */
+  }
+  
+  /* Logo */
+  .header__logo img {
+    width: 120px;
+    height: auto;
+  }
+  
+  /* Menú */
+  .header__menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header__menu li {
+    text-align: center;
+  }
+  
+  .header__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  .header__link:hover {
+    color: #cce7e7;
+  }
+  
+  /* Botón Contáctame */
+  .header__button {
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .header__button:hover {
+    background-color: #ffffff;
+    color: #008080;
+  }
+  
+  /* Menú hamburguesa para móviles */
+  .header__hamburguesa {
+    display: none; /* Oculto en pantallas grandes */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .header__hamburguesa span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 920px) {
+    .header__menu {
+      display: none; /* Oculta el menú inicialmente */
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      background-color: #008080;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 10px 20px;
+    }
+  
+    .header__menu.active {
+      display: flex; /* Muestra el menú al activar la hamburguesa */
+    }
+  
+    .header__hamburguesa {
+      display: flex; /* Muestra la hamburguesa en dispositivos móviles */
+    }
+  }
+  
+  
+  /* Sección Inicio */
+  .inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Ocupa toda la pantalla */
+    position: relative; /* Permite posicionar elementos */
+    top: -4em;
+    text-align: center;
+  }
+  
+  .inicio__contenido {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Imagen principal */
+  .inicio__icono {
+    position: relative;
+    top: 19em;
+    width: 700px; /* Tamaño ajustado */
+    height: auto;
+    z-index: 2; /* Para estar sobre el rectángulo */
+  }
+  
+  /* Rectángulo con degradado */
+  .inicio__rectangulo {
+    position: relative;
+    top: -80px; /* Ajusta la posición detrás del ícono */
+    width: 80em;
+    height: 30em;
+    max-width: 700px;
+    padding: 30px;
+    background: linear-gradient(135deg, #005f5f, #00b3b3); /* Degradado */
+    border-radius: 300px;
+    z-index: 1; /* Detrás del ícono */
+    text-align: center;
+  }
+  
+  /* Texto dentro del rectángulo */
+  .inicio__frase-bold {
+    position: relative;
+    top: 14em;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .inicio__frase-light {
+    position: relative;
+    top: 17em;
+    font-weight: lighter;
+    font-size: 1.2rem;
+  }
+  
+  /* Botón redondo */
+  .inicio__boton {
+    position: absolute;
+    bottom: -30px; /* Aparece ligeramente fuera del rectángulo */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Flecha triangular dentro del botón */
+  .inicio__boton::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #008080; /* Color de la flecha */
+  }
+  
+  /* Efecto de hover */
+  .inicio__boton:hover {
+    transform: translateX(-50%) scale(1.1); /* Efecto al pasar el mouse */
+  }
+/* Estilos generales para la ilustración que cae */
+.espera {
+    display: none; /* Oculta la sección inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    z-index: 1000; /* Asegura que se vea por encima de todo */
+    justify-content: center;
+    align-items: center;
+    animation: caer 2s ease-out forwards; /* Animación para el efecto de caída */
+  }
+  
+  .espera__contenido {
+    text-align: center;
+  }
+  
+  .espera__imagen {
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+  }
+  
+ /* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .espera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+    position: absolute; /* Posicionamos la sección por detrás de las otras */
+    background: transparent; /* Fondo transparente */
+    z-index: 1; /* Coloca esta capa detrás de otras secciones */
+  }
+  
+  /* Contenedor de la imagen */
+  .espera__contenedor {
+    position: relative;
+    animation: caer 3s ease-in-out infinite; /* Animación de caída infinita */
+  }
+  
+  /* Imagen del pájaro */
+  .espera__imagen {
+    width: 300px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    top: -200px; /* Empuja la imagen fuera de la pantalla hacia arriba */
+    animation: caer 1.5s ease-in-out infinite; /* Animación de caída infinita */
+  }
+  
+  /* Animación de caída */
+  @keyframes caer {
+    0% {
+      top: -600px;
+      opacity: 0;
+    }
+    50% {
+      top: 85%; /* Establece el punto medio de la caída */
+    }
+    100% {
+      top: 90%; /* Finaliza ligeramente por debajo del centro */
+      opacity: 100; 
+    }
+  }
+/* Sección Sobre mí */
+.sobre-mi {
+    margin-top: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    background: url('../assets/img/8.png') left center no-repeat, url('../assets/img/9.png') right center no-repeat; 
+    background-size: 25vh; /* Asegura que las imágenes cubran toda la altura */
+    background-attachment: fixed; /* Fija las imágenes al fondo */
+  }
+  
+  /* Contenedor de la sección Sobre mí */
+  .sobre-mi__contenedor {
+    position: relative;
+    width: 80em;
+    height: 30em;
+    max-width: 700px;
+    padding: 50px;
+    background: linear-gradient(135deg, #005f5f, #00b3b3); /* Degradado */
+    border-radius: 300px; /* Esquinas redondeadas */
+    z-index: 1; /* Asegura que el contenedor esté encima de la animación */
+    overflow: hidden; /* Asegura que las imágenes no sobresalgan del contenedor */
+  }
+  
+  /* Título de la sección Sobre mí */
+  .sobre-mi__titulo {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* Color del texto */
+  }
+  
+  /* Descripción dentro de la sección Sobre mí */
+  .sobre-mi__descripcion {
+    font-weight: lighter;
+    font-size: 1.2rem;
+    color: #ffffff; /* Color del texto */
+    z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
+  }
+  
+  /* Contenedor para las ilustraciones */
+  .ilustraciones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Las imágenes estarán por debajo del texto */
+  }
+  
+  /* Estilo de las imágenes (ilustraciones) */
+  .ilustracion {
+    position: absolute;
+    max-width: 30%;
+    opacity: 0.2; /* Ligera transparencia para que no interfieran demasiado */
+  }
+  
+  .izquierda {
+    top: 10%;
+    left: -1%;
+  }
+  
+  .derecha {
+    bottom: 10%;
+    right: 1%;
+  }
+/* Estilos generales para la sección Proyectos */
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background-color: #008080;
+    height: -70vh;
+  }
+.protectos p{
+    text-align: center;
+
+}  
+  /* Contenedor de proyectos */
+  .proyectos__contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  }
+  
+  /* Estilos para cada proyecto */
+  .proyecto {
+    background-color: #ccc;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+    position: relative; /* Necesario para posicionar la imagen detrás */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Esto asegura que los elementos estén en columna */
+    justify-content: flex-end; /* Hace que los elementos se alineen al fondo del contenedor */
+}
+
+.proyecto:hover {
+    transform: scale(1.05);
+}
+
+/* Proyecto destacado con mayor tamaño */
+.proyecto.destacado {
+    width: 600px;
+    height: 400px;
+    
+}
+
+/* Contenedor de la imagen */
+.proyecto__imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* La imagen está detrás del contenido */
+}
+
+.proyecto__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen cubre todo el contenedor */
+}
+
+/* Icono de tipo de proyecto */
+.proyecto__icono {
+    position: absolute;
+    top: 10px; /* Puedes ajustar esta posición si quieres moverlo más arriba o abajo */
+    left: 3em;
+    transform: translateX(-50%);
+    width: 5em;
+    height: 5em;
+    max-height: 60px;
+    max-width: 60px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex; /* Hacemos el contenedor un flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    z-index: 1; /* Asegura que el icono esté encima de la imagen */
+}
+.proyecto__icono img {
+    width: 80%;
+    height: 80%;
+    
+    object-fit: contain;
+    
+}
+
+/* Detalles del proyecto */
+.proyecto__detalle {
+    padding: 0.5em;
+    background-color: #ffffff;
+    margin-top: auto; /* Alinea el detalle al fondo */
+    border-radius: 10px;
+    position: relative;
+    margin: 1em;
+    z-index: 1; /* Asegura que el detalle esté encima de la imagen */
+}
+
+/* Título del proyecto */
+.proyecto__titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #026b6b;
+}
+
+/* Descripción del proyecto (solo para el destacado) */
+
+.proyecto__descripcion {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Espaciado entre proyectos */
+.proyecto {
+    margin-top: 20px;
+    color: #cce7e7;
+}
+/* Sección Servicios */
+.servicios {
+    padding: 4rem 2rem;
+    background-color: #008080;
+    text-align: center;
+    height: 70vh;
+    padding: 20%;
+  }
+  
+.servicios__titulo h2 {
+    font-size: 2.5rem;
+    color: #fdffff;
+    margin-bottom: 0.5rem;
+  }
+  
+.servicios__titulo p {
+    font-size: 1.2rem;
+    color: #fdffff;
+    margin-bottom: 2rem;
+  }
+  
+  .servicios__contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .servicio {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px #0000001a;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .servicio img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .servicio h3 {
+    font-size: 1.5rem;
+    color: #008080;
+    margin-bottom: 0.5rem;
+  }
+  
+  .servicio p {
+    font-size: 1rem;
+    color: #666;
+  }
+  

@@ -1,0 +1,56 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #008080; /* Fondo del sitio */
+}
+
+/* Contenedor principal */
+.coming-soon {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ícono */
+.icono {
+    margin-bottom: 20px; /* Espaciado debajo del ícono */
+    position: relative;
+    z-index: 2; /* Asegura que esté sobre el fondo */
+}
+
+.icono img {
+    width: 150px; /* Ajusta el tamaño del ícono */
+    height: auto; /* Mantén la proporción */
+}
+
+/* Texto centrado */
+.coming-soon__text {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté sobre el fondo */
+    text-align: center;
+    color: #ffffff; /* Color del texto */
+}
+
+.coming-soon__text h1 {
+    font-size: 4rem; /* Tamaño del texto */
+    font-family: "Century Gothic", Arial, sans-serif; /* Tipografía */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    animation: fade-in 2s ease-in-out; /* Efecto de aparición */
+}
+
+/* Animación de fade-in */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

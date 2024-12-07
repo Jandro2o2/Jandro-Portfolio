@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jandro Portafolio</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="shortcut icon" href="icono.ico" />
+
+</head>
+<body>
+    <!-- Botón flotante -->
+<a href="#inicio" class="boton-flotante" title="Volver al inicio">
+    <i class="fa fa-arrow-up"></i>
+  </a>
+  
+  <!-- Barra Superior -->
+  <header class="header" id="inicio">
+    <nav class="header__nav">
+      <!-- Logo -->
+      <div class="header__logo">
+        <img src="assets/img/1.png" alt="Logo Jandro">
+      </div>
+      <!-- Botón de menú hamburguesa para móviles -->
+      <div class="header__hamburguesa">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Menú -->
+      <ul class="header__menu">
+        <li><a href="#inicio" class="header__link">Inicio</a></li>
+        <li><a href="#About" class="header__link">Sobre mí</a></li>
+        <li><a href="#proyecto" class="header__link">Proyectos</a></li>
+        <li><a href="#servicios" class="header__link">Servicios</a></li>
+      </ul>
+      <!-- Botón Contáctame -->
+      <a href="https://www.instagram.com/alejo2o2/" class="header__button">Contáctame</a>
+    </nav>
+  </header>
+  
+  <!-- Sección Inicio -->
+  <section class="inicio">
+    <div class="inicio__contenido">
+      <!-- Icono principal -->
+      <div class="inicio__imagen-contenedor">
+        <img src="assets/img/3.png" alt="Icono Jandro" class="inicio__icono">
+      </div>
+      <!-- Rectángulo con degradado -->
+      <div class="inicio__rectangulo">
+        <p class="inicio__frase-bold">Después de tanto buscar</p>
+        <p class="inicio__frase-light">Tarde o temprano necesitas un descanso</p>
+        <!-- Botón redondo -->
+        <button class="inicio__boton" onclick="document.getElementById('About').scrollIntoView({ behavior: 'smooth' });">
+          <i class="fa fa-arrow-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Espera (con ilustración del pájaro) -->
+  <section class="espera">
+    <div class="espera__contenedor">
+      <img src="./assets/img/4.png" alt="Pájaro con paraguas" class="espera__imagen" />
+    </div>
+  </section>
+
+<!-- Sección Sobre mí -->
+<section class="sobre-mi" id="About">
+    <div class="sobre-mi__contenedor">
+      <p class="sobre-mi__titulo">About me</p>
+      <p class="sobre-mi__descripcion">
+        ¡Hola! Soy Alejandro, un diseñador gráfico de 22 años con una pasión por resolver problemas visuales y crear experiencias memorables. Actualmente estudio en la Universidad Autónoma del Caribe para obtener mi título, pero ya cuento con experiencia en el campo, lo que me ha permitido trabajar en proyectos diversos y de gran impacto.
+        
+        Me encanta enfrentar desafíos creativos, explorar nuevas ideas y llevarlas a la práctica. Creo que el diseño es más que una herramienta visual, es una forma de conectar con las personas y transmitir mensajes de manera clara y atractiva.
+        
+        Siempre busco innovar, aprender y crecer, tanto profesional como personalmente. Si quieres saber más o trabajar conmigo, no dudes en contactarme.
+      </p>
+      <div class="ilustraciones">
+        <img src="./assets/img/6.png" alt="Ilustración izquierda" class="ilustracion izquierda">
+        <img src="./assets/img/7.png" alt="Ilustración derecha" class="ilustracion derecha">
+      </div>
+    </div>
+  </section>
+  <!-- Sección Servicios -->
+<section class="servicios" id="servicios">
+    <div class="servicios__titulo">
+      <h2>Servicios</h2>
+      <p>Descubre todo lo que puedo ofrecerte</p>
+    </div>
+    <div class="servicios__contenedor">
+      <!-- Servicio 1 -->
+      <div class="servicio">
+   
+        <h3>Diseño Gráfico</h3>
+        <p>Soluciones visuales para comunicar ideas de forma efectiva y creativa.</p>
+      </div>
+      <!-- Servicio 2 -->
+      <div class="servicio">
+        <h3>Branding</h3>
+        <p>Creación de identidades visuales que conectan con tu audiencia.</p>
+      </div>
+      <!-- Servicio 3 -->
+      <div class="servicio">
+        <h3>Animación</h3>
+        <p>Animaciones impactantes para tus proyectos audiovisuales.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="proyectos">
+    <div class="proyectos__contenedor">
+        <p></p>
+      <!-- Proyecto destacado -->
+      <div class="proyecto destacado">
+        <div class="proyecto__imagen">
+          <img src="./assets/img/unicef.png" alt="Proyecto destacado">
+        </div>
+        <div class="proyecto__icono">
+          <img src="./assets/img/10.1.png" alt="Editorial">
+        </div>
+        <a href="./coming_soon.html" class="proyecto__enlace">
+          <div class="proyecto__detalle">
+            <h3 class="proyecto__titulo">UNICEF trabajo editorial</h3>
+            <p class="proyecto__descripcion">Te cuento sobre mi trabajo como editor para unicef y el tiempo que pase como voluntario.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Otros proyectos -->
+      <div class="proyecto">
+        <div class="proyecto__imagen">
+          <img src="./assets/img/proloqui.jpg" alt="Proyecto 1">
+        </div>
+        <div class="proyecto__icono">
+          <img src="./assets/img/10.1.png" alt="Branding">
+        </div>
+        <a href="./coming_soon.html" class="proyecto__enlace">
+          <div class="proyecto__detalle">
+            <h3 class="proyecto__titulo">PROLOQUIO news</h3>
+          </div>
+        </a>
+      </div>
+  
+      <div class="proyecto">
+        <div class="proyecto__imagen">
+          <img src="./assets/img/mikes.png" alt="Proyecto 2">
+        </div>
+        <div class="proyecto__icono">
+          <img src="./assets/img/11.1.png" alt="Branding">
+        </div>
+        <a href="./coming_soon.html" class="proyecto__enlace">
+          <div class="proyecto__detalle">
+            <h3 class="proyecto__titulo">Mike´s splash FotoAd</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="proyecto">
+        <div class="proyecto__imagen">
+          <img src="./assets/img/13.png" alt="Proyecto 1">
+        </div>
+        <div class="proyecto__icono">
+          <img src="./assets/img/12.1.png" alt="Branding">
+        </div>
+        <a href="./coming_soon.html" class="proyecto__enlace">
+          <div class="proyecto__detalle">
+            <h3 class="proyecto__titulo">Branding/Merch DITHOR</h3>
+          </div>
+        </a>
+      </div>
+  
+      <div class="proyecto" id="proyecto">
+        <div class="proyecto__imagen">
+          <img src="./assets/img/ted.jpg" alt="Proyecto 2">
+        </div>
+        <div class="proyecto__icono">
+          <img src="./assets/img/11.1.png" alt="Branding">
+        </div>
+        <a href="./coming_soon.html" class="proyecto__enlace">
+          <div class="proyecto__detalle">
+            <h3 class="proyecto__titulo">Monstaje Ted</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="proyecto destacado">
+        <div class="proyecto__imagen">
+          <img src="./assets/img/mid.jpg" alt="Proyecto destacado">
+        </div>
+        <div class="proyecto__icono">
+          <img src="./assets/img/7.1.png" alt="Editorial">
+        </div>
+        <a href="./coming_soon.html" class="proyecto__enlace">
+          <div class="proyecto__detalle">
+            <h3 class="proyecto__titulo">Portada para NETFLIX/The Midnight Gospel</h3>
+            <p class="proyecto__descripcion">Mi propuesta para participar en la creacion de portada para la serie the Midnight Gospel.</p>
+          </div>
+        </a>
+      </div>    
+  </section>
+
+</body>
+</html>
